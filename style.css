@@ -1,0 +1,102 @@
+/* --- TASK 1: THE VISUAL FOUNDATION (Colors & Fonts) --- */
+:root {
+  /* Vibrant, colorful variables as requested */
+  --primary-color: #6200ea;    /* Bright Purple */
+  --accent-color: #ff5722;     /* Vibrant Orange */
+  --bg-light: #e3f2fd;        /* Light Sky Blue */
+  --text-main: #1a237e;       /* Deep Navy Blue */
+  --card-bg: #ffffff;         /* Clean White */
+}
+
+body {
+  background-color: var(--bg-light); /* Uses colorful light blue [cite: 12, 23] */
+  color: var(--text-main); /* Deep blue for better reading [cite: 12, 24] */
+  font-family: 'Segoe UI', sans-serif; /* Primary sans-serif font [cite: 9] */
+  line-height: 1.6; /* Adds breathing space [cite: 10] */
+  padding: 20px;
+}
+
+h1, h2, h3 {
+  color: var(--primary-color); /* Purple headings [cite: 25] */
+  font-family: 'Georgia', serif; /* Distinct serif font [cite: 9] */
+  font-weight: bold; /* Bold weight for headings [cite: 10] */
+}
+
+/* Specific rule to make the picture "more little" as requested  */
+img {
+  max-width: 100px; /* Small size */
+  height: auto;
+  border: 3px solid var(--accent-color); /* Colorful orange border */
+  border-radius: 15px; /* Rounded corners */
+}
+
+/* --- TASK 2: INTERACTIVE STATES (Buttons & Links) --- */
+nav a, button {
+  text-decoration: none; /* Removes underlines [cite: 28] */
+  transition: all 0.3s ease; /* Smooth color changes [cite: 29, 30] */
+}
+
+/* Hover: Mouse over effect [cite: 31] */
+nav a:hover, button:hover {
+  color: white;
+  background-color: var(--primary-color); /* Turns purple on hover */
+}
+
+/* Active: When clicked [cite: 32] */
+button:active {
+  transform: scale(0.9); /* Shakes or shrinks slightly */
+}
+
+/* Focus: For keyboard users [cite: 33] */
+input:focus, button:focus {
+  outline: 3px solid var(--accent-color); /* Orange glow */
+}
+
+/* --- TASK 3: PRODUCT LIST STYLING (Cards) --- */
+article {
+  display: inline-block; /* Aligns side-by-side [cite: 6, 36] */
+  width: 220px; /* Card width [cite: 36] */
+  margin: 10px;
+  padding: 15px;
+  border: 2px solid var(--primary-color); /* Purple border [cite: 37] */
+  border-radius: 20px; /* Round card corners [cite: 37] */
+  background-color: var(--card-bg); /* White card background [cite: 37] */
+  vertical-align: top;
+  box-shadow: 4px 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Alternating colors for list items [cite: 38] */
+article:nth-child(even) {
+  background-color: #fff3e0; /* Light orange for even cards [cite: 39] */
+}
+
+/* --- TASK 4 & 5: ADVANCED SELECTORS --- */
+/* Style for empty cart [cite: 42] */
+#cart-container:empty {
+  padding: 40px;
+  background-color: #ffcdd2; /* Reddish background if empty */
+}
+
+/* Adds currency symbol automatically  */
+.price::before, td:last-child::before {
+  content: "₱ "; 
+  font-weight: bold;
+  color: #2e7d32; /* Green color for money */
+}
+
+/* Form validation styling [cite: 44] */
+input:required { border-bottom: 4px solid var(--accent-color); }
+input:valid { border-bottom: 4px solid #4caf50; }
+
+/* Table styling [cite: 46] */
+table tr td:first-child {
+  font-weight: bold; /* Bold first column [cite: 46] */
+  color: var(--primary-color);
+}
+
+/* Stylized colorful quotation marks [cite: 49] */
+blockquote::before { content: "“"; font-size: 2em; color: var(--accent-color); }
+blockquote::after { content: "”"; font-size: 2em; color: var(--accent-color); }
+
+/* Bullet color [cite: 48] */
+li::marker { color: var(--accent-color); }

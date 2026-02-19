@@ -3,22 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title>ShopEasy | Home</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <main>
         <h2>Jeans</h2>
         <img src="pants.jpg" alt="Jeans">
+        
         <section>
             <h3>Specifications</h3>
             <table border="1">
-            </tr>
-            <tr>
-                <th>Material</th>
-                <td>Silk, cotton, fine wool</td>
-            </tr>
-            <tr>
-                <th>Size</th>
-                <td>Small, Medium, Large</td>
+                <tr>
+                    <th>Material</th>
+                    <td>Silk, cotton, fine wool</td>
+                </tr>
+                <tr>
+                    <th>Size</th>
+                    <td>Small, Medium, Large</td>
                 </tr>
                 <tr>
                     <th>Color</th>
@@ -26,31 +27,34 @@
                 </tr>
                 <tr>
                     <th>Price</th>
-                    <td>500</td>
+                    <td class="price">500</td>
                 </tr>
-                </table>
+            </table>
         </section>
+
         <section>
             <h3>Purchase</h3>
             <form>
                 <label>Quantity:</label>
-                <input type="number" name="qty" min="1" value="1">
+                <input type="number" name="qty" min="1" value="1" required>
                 <button type="submit"><a href="cart.html"> add to cart</a></button>
             </form>
         </section>
+
         <section>
             <h3>Reviews</h3>
-            <article>
+            <article class="review-card">
                 <h4>Re-Ann Marie</h4>
-                <blockquote>
-                    "Will definitely buy this again."
+                <blockquote class="review">
+                    Will definitely buy this again.
                 </blockquote>
+                
                 <h4>Sophia Margareth</h4>
-                <blockquote>
-                    "Good."
+                <blockquote class="review">
+                    Good.
                 </blockquote>
             </article>
         </section>
     </main>
-    </body>
-    </html>
+</body>
+</html>
