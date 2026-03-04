@@ -1,0 +1,118 @@
+/* --- TASK 1: THE RESPONSIVE FOUNDATION (Breakpoints) [cite: 8, 9] --- */
+
+/* Base Styles (Mobile: 0px to 480px) [cite: 10] */
+:root {
+  --primary-color: #6200ea;
+  --accent-color: #ff5722;
+  --bg-light: #e3f2fd;
+  --text-main: #1a237e;
+  --card-bg: #ffffff;
+}
+
+body {
+  background-color: var(--bg-light);
+  color: var(--text-main);
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 10px;
+}
+
+/* Task 5: Fluid Images [cite: 30, 31] */
+img {
+  max-width: 100%; /* Ensures images don't overflow [cite: 31] */
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Task 2: Navigation (Mobile) [cite: 13, 15] */
+header {
+  display: flex;
+  flex-direction: column; /* Stack vertically [cite: 15] */
+  align-items: center; /* Center items [cite: 17] */
+  padding: 20px;
+  background: var(--card-bg);
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column; /* Vertical links [cite: 15] */
+  gap: 10px;
+  text-align: center;
+}
+
+/* Task 3: Product Grid (Mobile) [cite: 18, 20] */
+.product-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* Single column [cite: 20] */
+  gap: 20px; /* Spacing between cards [cite: 23] */
+}
+
+/* Task 4: Cart Items Flexbox  */
+.cart-list li {
+  display: flex; /* Horizontal alignment  */
+  align-items: center;
+  gap: 15px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+  background: var(--card-bg); /* Card design [cite: 27] */
+}
+
+/* Task 5.2: Responsive Table [cite: 32] */
+.table-container {
+  overflow-x: auto; /* Prevents horizontal scrolling [cite: 33] */
+}
+
+/* Task 7: Animation Definitions [cite: 39, 41] */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.product-card {
+  animation: fadeIn 0.8s ease-out forwards; /* Fade-in effect [cite: 44, 49] */
+}
+
+/* --- TABLET BREAKPOINT (481px to 768px) [cite: 11] --- */
+@media (min-width: 481px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2-column grid [cite: 21] */
+  }
+}
+
+/* --- DESKTOP BREAKPOINT (769px to 1280px) [cite: 12] --- */
+@media (min-width: 769px) {
+  /* Task 2: Header (Desktop) [cite: 16] */
+  header {
+    flex-direction: row; /* Horizontal layout [cite: 16] */
+    justify-content: space-between; /* Logo left, Nav right [cite: 16] */
+  }
+  
+  nav ul {
+    flex-direction: row; /* Horizontal links [cite: 16] */
+  }
+
+  /* Task 3: Product Grid (Desktop) [cite: 22] */
+  .product-grid {
+    grid-template-columns: repeat(4, minmax(200px, 1fr)); /* 4-column grid [cite: 22] */
+  }
+
+  /* Task 6: Sidebar Layout [cite: 34, 37] */
+  .shop-container {
+    display: grid;
+    grid-template-columns: 25% 1fr; /* Sidebar 25% width [cite: 38] */
+    gap: 30px;
+  }
+
+  /* Task 4.2: Checkout Layout [cite: 28] */
+  .checkout-container {
+    display: flex;
+    gap: 40px;
+  }
+  
+  .checkout-container section { flex: 2; }
+  .checkout-container aside { flex: 1; }
+}
